@@ -32,3 +32,10 @@ test-results/
 *.sqlite3-shm
 *.sqlite3-journal
 !*.traineddata.gz
+
+# runtime data (persisted selections/collections)
+packages/data/
+
+# local npm cache and working scratch notes
+.npm-cache/
+scratch/

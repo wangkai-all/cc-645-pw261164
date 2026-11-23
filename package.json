@@ -1,0 +1,24 @@
+{
+  "name": "opcua-address-browser",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browse an OPC UA address space and collect variable values with stable node identities",
+  "type": "module",
+  "workspaces": [
+    "packages/server",
+    "packages/web"
+  ],
+  "scripts": {
+    "install-all": "npm install",
+    "dev": "concurrently -k -n gateway,web -c blue,green \"npm:dev -w @opc/server\" \"npm:dev -w @opc/web\"",
+    "build": "npm run build -w @opc/web",
+    "start": "npm run start -w @opc/server",
+    "test-server": "npm run test-server -w @opc/server",
+    "demo": "npm run demo -w @opc/server",
+    "test": "node scripts/run-tests.mjs",
+    "test:fast": "npm run test -w @opc/server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
